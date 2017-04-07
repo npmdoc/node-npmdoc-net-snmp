@@ -1,0 +1,2051 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/stephenwvickers/node-net-snmp#readme">net-snmp (v1.1.19)</a>
+</h1>
+<h4>JavaScript implementation of the Simple Network Management Protocol (SNMP)</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp">module net-snmp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError
+            <span class="apidocSignatureSpan">(message, status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError.super_">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestInvalidError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestInvalidError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestTimedOutError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestTimedOutError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.ResponseInvalidError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>ResponseInvalidError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session">
+            function <span class="apidocSignatureSpan">net-snmp.</span>Session
+            <span class="apidocSignatureSpan">(target, community, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.createSession">
+            function <span class="apidocSignatureSpan">net-snmp.</span>createSession
+            <span class="apidocSignatureSpan">(target, community, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.isVarbindError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>isVarbindError
+            <span class="apidocSignatureSpan">(varbind)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.varbindError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>varbindError
+            <span class="apidocSignatureSpan">(varbind)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">net-snmp.</span>Version1</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">net-snmp.</span>Version2c</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">net-snmp.</span>ErrorStatus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">net-snmp.</span>ObjectParser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">net-snmp.</span>ObjectType</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">net-snmp.</span>Session.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">net-snmp.</span>TrapType</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.ObjectParser">module net-snmp.ObjectParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.ObjectParser.readInt">
+            function <span class="apidocSignatureSpan">net-snmp.ObjectParser.</span>readInt
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.ObjectParser.readUint">
+            function <span class="apidocSignatureSpan">net-snmp.ObjectParser.</span>readUint
+            <span class="apidocSignatureSpan">(buffer, isSigned)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.RequestFailedError">module net-snmp.RequestFailedError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError.RequestFailedError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError
+            <span class="apidocSignatureSpan">(message, status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError.super_">
+            function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.RequestFailedError.super_">module net-snmp.RequestFailedError.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError.super_.super_">
+            function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestFailedError.super_.captureStackTrace">
+            function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.super_.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">net-snmp.RequestFailedError.super_.</span>stackTraceLimit</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.RequestInvalidError">module net-snmp.RequestInvalidError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestInvalidError.RequestInvalidError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestInvalidError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestInvalidError.super_">
+            function <span class="apidocSignatureSpan">net-snmp.RequestInvalidError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.RequestTimedOutError">module net-snmp.RequestTimedOutError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestTimedOutError.RequestTimedOutError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>RequestTimedOutError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.RequestTimedOutError.super_">
+            function <span class="apidocSignatureSpan">net-snmp.RequestTimedOutError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.ResponseInvalidError">module net-snmp.ResponseInvalidError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.ResponseInvalidError.ResponseInvalidError">
+            function <span class="apidocSignatureSpan">net-snmp.</span>ResponseInvalidError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.ResponseInvalidError.super_">
+            function <span class="apidocSignatureSpan">net-snmp.ResponseInvalidError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.Session">module net-snmp.Session</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.Session">
+            function <span class="apidocSignatureSpan">net-snmp.</span>Session
+            <span class="apidocSignatureSpan">(target, community, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.super_">
+            function <span class="apidocSignatureSpan">net-snmp.Session.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.net-snmp.Session.prototype">module net-snmp.Session.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.cancelRequests">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>cancelRequests
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.close">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.get">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>get
+            <span class="apidocSignatureSpan">(oids, responseCb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.getBulk">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>getBulk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.getNext">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>getNext
+            <span class="apidocSignatureSpan">(oids, responseCb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.inform">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>inform
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.onClose">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.onError">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.onMsg">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onMsg
+            <span class="apidocSignatureSpan">(buffer, remote)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.onSimpleGetResponse">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onSimpleGetResponse
+            <span class="apidocSignatureSpan">(req, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.registerRequest">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>registerRequest
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.send">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>send
+            <span class="apidocSignatureSpan">(req, noWait)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.set">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>set
+            <span class="apidocSignatureSpan">(varbinds, responseCb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.simpleGet">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>simpleGet
+            <span class="apidocSignatureSpan">(pduClass, feedCb, varbinds, responseCb, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.subtree">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>subtree
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.table">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>table
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.tableColumns">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>tableColumns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.trap">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>trap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.unregisterRequest">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>unregisterRequest
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.net-snmp.Session.prototype.walk">
+            function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>walk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp" id="apidoc.module.net-snmp">module net-snmp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError" id="apidoc.element.net-snmp.RequestFailedError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError
+        <span class="apidocSignatureSpan">(message, status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestFailedError(message, status) {
+	this.name = "RequestFailedError";
+	this.message = message;
+	this.status = status;
+	Error.captureStackTrace(this, RequestFailedError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError.super_" id="apidoc.element.net-snmp.RequestFailedError.super_">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestInvalidError" id="apidoc.element.net-snmp.RequestInvalidError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestInvalidError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestInvalidError(message) {
+	this.name = "RequestInvalidError";
+	this.message = message;
+	Error.captureStackTrace(this, RequestInvalidError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestTimedOutError" id="apidoc.element.net-snmp.RequestTimedOutError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestTimedOutError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestTimedOutError(message) {
+	this.name = "RequestTimedOutError";
+	this.message = message;
+	Error.captureStackTrace(this, RequestTimedOutError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.ResponseInvalidError" id="apidoc.element.net-snmp.ResponseInvalidError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>ResponseInvalidError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResponseInvalidError(message) {
+	this.name = "ResponseInvalidError";
+	this.message = message;
+	Error.captureStackTrace(this, ResponseInvalidError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session" id="apidoc.element.net-snmp.Session">
+        function <span class="apidocSignatureSpan">net-snmp.</span>Session
+        <span class="apidocSignatureSpan">(target, community, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Session = function (target, community, options) {
+	this.target = target || "127.0.0.1";
+	this.community = community || "public";
+
+	this.version = (options &amp;&amp; options.version)
+			? options.version
+			: Version1;
+
+	this.transport = (options &amp;&amp; options.transport)
+			? options.transport
+			: "udp4";
+	this.port = (options &amp;&amp; options.port )
+			? options.port
+			: 161;
+	this.trapPort = (options &amp;&amp; options.trapPort )
+			? options.trapPort
+			: 162;
+
+	this.retries = (options &amp;&amp; (options.retries || options.retries == 0))
+			? options.retries
+			: 1;
+	this.timeout = (options &amp;&amp; options.timeout)
+			? options.timeout
+			: 5000;
+
+	this.sourceAddress = (options &amp;&amp; options.sourceAddress )
+			? options.sourceAddress
+			: undefined;
+	this.sourcePort = (options &amp;&amp; options.sourcePort )
+			? parseInt(options.sourcePort)
+			: undefined;
+
+	this.reqs = {};
+	this.reqCount = 0;
+
+	this.dgram = dgram.createSocket (this.transport);
+	this.dgram.unref();
+	
+	var me = this;
+	this.dgram.on ("message", me.onMsg.bind (me));
+	this.dgram.on ("close", me.onClose.bind (me));
+	this.dgram.on ("error", me.onError.bind (me));
+
+	if (this.sourceAddress || this.sourcePort)
+		this.dgram.bind (this.sourcePort, this.sourceAddress);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.createSession" id="apidoc.element.net-snmp.createSession">
+        function <span class="apidocSignatureSpan">net-snmp.</span>createSession
+        <span class="apidocSignatureSpan">(target, community, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSession = function (target, community, options) {
+	return new Session (target, community, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Version 1.1.17 - 21/03/2016
+
+* Correct reference to non-existant `req` variable in the `Session` objects
+  constructor (should be `this`)
+
+## Version 1.1.18 - 15/05/2015
+
+* Correct argument number and names to the `snmp.<span class="apidocCodeKeywordSpan">createSession</span>()` function
+* Add missing braces to an example in the README.md file
+
+## Version 1.1.19 - 26/08/2016
+
+* Remove 64bit integer check to ensure a maximum of 8 bytes are given in send
+  and received messages
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.isVarbindError" id="apidoc.element.net-snmp.isVarbindError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>isVarbindError
+        <span class="apidocSignatureSpan">(varbind)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isVarbindError(varbind) {
+	return !!(varbind.type == ObjectType.NoSuchObject
+	|| varbind.type == ObjectType.NoSuchInstance
+	|| varbind.type == ObjectType.EndOfMibView);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   error occurred
+ * `varbinds` - Array of varbinds, will not be provided if an error occurred
+
+The varbind in position N in the `varbinds` array will correspond to the OID
+in position N in the `oids` array in the request.
+
+Each varbind must be checked for an error condition using the
+`snmp.<span class="apidocCodeKeywordSpan">isVarbindError</span>()` function when using SNMP version 2c.
+
+The following example fetches values for the sysName (`1.3.6.1.2.1.1.5.0`) and
+sysLocation (`1.3.6.1.2.1.1.6.0`) OIDs:
+
+var oids = ["1.3.6.1.2.1.1.5.0", "1.3.6.1.2.1.1.6.0"];
+
+session.get (oids, function (error, varbinds) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.varbindError" id="apidoc.element.net-snmp.varbindError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>varbindError
+        <span class="apidocSignatureSpan">(varbind)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function varbindError(varbind) {
+	return (ObjectType[varbind.type] || "NotAnError") + ": " + varbind.oid;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * `table` - Object containing object references representing conceptual
+   rows keyed by index (e.g. for the ifTable table rows are keyed by ifIndex),
+   each row object will contain values keyed by column number, will not be
+   provided if an error occurred
+
+If an error occurs with any varbind returned by `subtree()` no table will be
+passed to the `callback` function.  The reason for failure, and the related
+OID string (as returned from a call to the `snmp.<span class="apidocCodeKeywordSpan">varbindError</span>()` function),
+will be passed to the `callback` function in the `error` argument as an
+instance of the `RequestFailedError` class.
+
+The following example fetches the ifTable (`1.3.6.1.2.1.2.2`) table:
+
+var oid = "1.3.6.1.2.1.2.2";
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.ObjectParser" id="apidoc.module.net-snmp.ObjectParser">module net-snmp.ObjectParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.ObjectParser.readInt" id="apidoc.element.net-snmp.ObjectParser.readInt">
+        function <span class="apidocSignatureSpan">net-snmp.ObjectParser.</span>readInt
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readInt(buffer) {
+	return readUint (buffer, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.ObjectParser.readUint" id="apidoc.element.net-snmp.ObjectParser.readUint">
+        function <span class="apidocSignatureSpan">net-snmp.ObjectParser.</span>readUint
+        <span class="apidocSignatureSpan">(buffer, isSigned)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readUint(buffer, isSigned) {
+	buffer.readByte ();
+	var length = buffer.readByte ();
+	var value = 0;
+	var signedBitSet = false;
+
+	if (length &gt; 5) {
+		 throw new RangeError ("Integer too long '" + length + "'");
+	} else if (length == 5) {
+		if (buffer.readByte () !== 0)
+			throw new RangeError ("Integer too long '" + length + "'");
+		length = 4;
+	}
+
+	for (var i = 0; i &lt; length; i++) {
+		value *= 256;
+		value += buffer.readByte ();
+
+		if (isSigned &amp;&amp; i &lt;= 0) {
+			if ((value &amp; 0x80) == 0x80)
+				signedBitSet = true;
+		}
+	}
+	
+	if (signedBitSet)
+		value -= (1 &lt;&lt; (i * 8));
+
+	return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.RequestFailedError" id="apidoc.module.net-snmp.RequestFailedError">module net-snmp.RequestFailedError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError.RequestFailedError" id="apidoc.element.net-snmp.RequestFailedError.RequestFailedError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestFailedError
+        <span class="apidocSignatureSpan">(message, status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestFailedError(message, status) {
+	this.name = "RequestFailedError";
+	this.message = message;
+	this.status = status;
+	Error.captureStackTrace(this, RequestFailedError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError.super_" id="apidoc.element.net-snmp.RequestFailedError.super_">
+        function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.RequestFailedError.super_" id="apidoc.module.net-snmp.RequestFailedError.super_">module net-snmp.RequestFailedError.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError.super_.super_" id="apidoc.element.net-snmp.RequestFailedError.super_.super_">
+        function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestFailedError.super_.captureStackTrace" id="apidoc.element.net-snmp.RequestFailedError.super_.captureStackTrace">
+        function <span class="apidocSignatureSpan">net-snmp.RequestFailedError.super_.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/*****************************************************************************
+ ** Exception class definitions
+ **/
+
+function ResponseInvalidError (message) {
+	this.name = "ResponseInvalidError";
+	this.message = message;
+	Error.<span class="apidocCodeKeywordSpan">captureStackTrace</span>(this, ResponseInvalidError);
+}
+util.inherits (ResponseInvalidError, Error);
+
+function RequestInvalidError (message) {
+	this.name = "RequestInvalidError";
+	this.message = message;
+	Error.captureStackTrace(this, RequestInvalidError);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.RequestInvalidError" id="apidoc.module.net-snmp.RequestInvalidError">module net-snmp.RequestInvalidError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestInvalidError.RequestInvalidError" id="apidoc.element.net-snmp.RequestInvalidError.RequestInvalidError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestInvalidError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestInvalidError(message) {
+	this.name = "RequestInvalidError";
+	this.message = message;
+	Error.captureStackTrace(this, RequestInvalidError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestInvalidError.super_" id="apidoc.element.net-snmp.RequestInvalidError.super_">
+        function <span class="apidocSignatureSpan">net-snmp.RequestInvalidError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.RequestTimedOutError" id="apidoc.module.net-snmp.RequestTimedOutError">module net-snmp.RequestTimedOutError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestTimedOutError.RequestTimedOutError" id="apidoc.element.net-snmp.RequestTimedOutError.RequestTimedOutError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>RequestTimedOutError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestTimedOutError(message) {
+	this.name = "RequestTimedOutError";
+	this.message = message;
+	Error.captureStackTrace(this, RequestTimedOutError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.RequestTimedOutError.super_" id="apidoc.element.net-snmp.RequestTimedOutError.super_">
+        function <span class="apidocSignatureSpan">net-snmp.RequestTimedOutError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.ResponseInvalidError" id="apidoc.module.net-snmp.ResponseInvalidError">module net-snmp.ResponseInvalidError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.ResponseInvalidError.ResponseInvalidError" id="apidoc.element.net-snmp.ResponseInvalidError.ResponseInvalidError">
+        function <span class="apidocSignatureSpan">net-snmp.</span>ResponseInvalidError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResponseInvalidError(message) {
+	this.name = "ResponseInvalidError";
+	this.message = message;
+	Error.captureStackTrace(this, ResponseInvalidError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.ResponseInvalidError.super_" id="apidoc.element.net-snmp.ResponseInvalidError.super_">
+        function <span class="apidocSignatureSpan">net-snmp.ResponseInvalidError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.Session" id="apidoc.module.net-snmp.Session">module net-snmp.Session</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.Session" id="apidoc.element.net-snmp.Session.Session">
+        function <span class="apidocSignatureSpan">net-snmp.</span>Session
+        <span class="apidocSignatureSpan">(target, community, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Session = function (target, community, options) {
+	this.target = target || "127.0.0.1";
+	this.community = community || "public";
+
+	this.version = (options &amp;&amp; options.version)
+			? options.version
+			: Version1;
+
+	this.transport = (options &amp;&amp; options.transport)
+			? options.transport
+			: "udp4";
+	this.port = (options &amp;&amp; options.port )
+			? options.port
+			: 161;
+	this.trapPort = (options &amp;&amp; options.trapPort )
+			? options.trapPort
+			: 162;
+
+	this.retries = (options &amp;&amp; (options.retries || options.retries == 0))
+			? options.retries
+			: 1;
+	this.timeout = (options &amp;&amp; options.timeout)
+			? options.timeout
+			: 5000;
+
+	this.sourceAddress = (options &amp;&amp; options.sourceAddress )
+			? options.sourceAddress
+			: undefined;
+	this.sourcePort = (options &amp;&amp; options.sourcePort )
+			? parseInt(options.sourcePort)
+			: undefined;
+
+	this.reqs = {};
+	this.reqCount = 0;
+
+	this.dgram = dgram.createSocket (this.transport);
+	this.dgram.unref();
+	
+	var me = this;
+	this.dgram.on ("message", me.onMsg.bind (me));
+	this.dgram.on ("close", me.onClose.bind (me));
+	this.dgram.on ("error", me.onError.bind (me));
+
+	if (this.sourceAddress || this.sourcePort)
+		this.dgram.bind (this.sourcePort, this.sourceAddress);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.super_" id="apidoc.element.net-snmp.Session.super_">
+        function <span class="apidocSignatureSpan">net-snmp.Session.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.net-snmp.Session.prototype" id="apidoc.module.net-snmp.Session.prototype">module net-snmp.Session.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.cancelRequests" id="apidoc.element.net-snmp.Session.prototype.cancelRequests">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>cancelRequests
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancelRequests = function (error) {
+	var id;
+	for (id in this.reqs) {
+		var req = this.reqs[id];
+		this.unregisterRequest (req.id);
+		req.responseCb (error);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.close" id="apidoc.element.net-snmp.Session.prototype.close">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+	this.dgram.close ();
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.get" id="apidoc.element.net-snmp.Session.prototype.get">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>get
+        <span class="apidocSignatureSpan">(oids, responseCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (oids, responseCb) {
+	function feedCb (req, message) {
+		var pdu = message.pdu;
+		var varbinds = [];
+
+		if (req.message.pdu.varbinds.length != pdu.varbinds.length) {
+			req.responseCb (new ResponseInvalidError ("Requested OIDs do not "
+					+ "match response OIDs"));
+		} else {
+			for (var i = 0; i &lt; req.message.pdu.varbinds.length; i++) {
+				if (req.message.pdu.varbinds[i].oid != pdu.varbinds[i].oid) {
+					req.responseCb (new ResponseInvalidError ("OID '"
+							+ req.message.pdu.varbinds[i].oid
+							+ "' in request at positiion '" + i + "' does not "
+							+ "match OID '" + pdu.varbinds[i].oid + "' in response "
+							+ "at position '" + i + "'"));
+					return;
+				} else {
+					varbinds.push (pdu.varbinds[i]);
+				}
+			}
+
+			req.responseCb (null, varbinds);
+		}
+	}
+
+	var pduVarbinds = [];
+
+	for (var i = 0; i &lt; oids.length; i++) {
+		var varbind = {
+			oid: oids[i]
+		};
+		pduVarbinds.push (varbind);
+	}
+
+	this.simpleGet (GetRequestPdu, feedCb, pduVarbinds, responseCb);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.getBulk" id="apidoc.element.net-snmp.Session.prototype.getBulk">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>getBulk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBulk = function () {
+	var oids, nonRepeaters, maxRepetitions, responseCb;
+
+	if (arguments.length &gt;= 4) {
+		oids = arguments[0];
+		nonRepeaters = arguments[1];
+		maxRepetitions = arguments[2];
+		responseCb = arguments[3];
+	} else if (arguments.length &gt;= 3) {
+		oids = arguments[0];
+		nonRepeaters = arguments[1];
+		maxRepetitions = 10;
+		responseCb = arguments[2];
+	} else {
+		oids = arguments[0];
+		nonRepeaters = 0;
+		maxRepetitions = 10;
+		responseCb = arguments[1];
+	}
+
+	function feedCb (req, message) {
+		var pdu = message.pdu;
+		var varbinds = [];
+		var i = 0;
+
+		// first walk through and grab non-repeaters
+		if (pdu.varbinds.length &lt; nonRepeaters) {
+			req.responseCb (new ResponseInvalidError ("Varbind count in "
+					+ "response '" + pdu.varbinds.length + "' is less than "
+					+ "non-repeaters '" + nonRepeaters + "' in request"));
+		} else {
+			for ( ; i &lt; nonRepeaters; i++) {
+				if (isVarbindError (pdu.varbinds[i])) {
+					varbinds.push (pdu.varbinds[i]);
+				} else if (! oidFollowsOid (req.message.pdu.varbinds[i].oid,
+						pdu.varbinds[i].oid)) {
+					req.responseCb (new ResponseInvalidError ("OID '"
+							+ req.message.pdu.varbinds[i].oid + "' in request at "
+							+ "positiion '" + i + "' does not precede "
+							+ "OID '" + pdu.varbinds[i].oid + "' in response "
+							+ "at position '" + i + "'"));
+					return;
+				} else {
+					varbinds.push (pdu.varbinds[i]);
+				}
+			}
+		}
+
+		var repeaters = req.message.pdu.varbinds.length - nonRepeaters;
+
+		// secondly walk through and grab repeaters
+		if (pdu.varbinds.length % (repeaters)) {
+			req.responseCb (new ResponseInvalidError ("Varbind count in "
+					+ "response '" + pdu.varbinds.length + "' is not a "
+					+ "multiple of repeaters '" + repeaters
+					+ "' plus non-repeaters '" + nonRepeaters + "' in request"));
+		} else {
+			while (i &lt; pdu.varbinds.length) {
+				for (var j = 0; j &lt; repeaters; j++, i++) {
+					var reqIndex = nonRepeaters + j;
+					var respIndex = i;
+
+					if (isVarbindError (pdu.varbinds[respIndex])) {
+						if (! varbinds[reqIndex])
+							varbinds[reqIndex] = [];
+						varbinds[reqIndex].push (pdu.varbinds[respIndex]);
+					} else if (! oidFollowsOid (
+							req.message.pdu.varbinds[reqIndex].oid,
+							pdu.varbinds[respIndex].oid)) {
+						req.responseCb (new ResponseInvalidError ("OID '"
+								+ req.message.pdu.varbinds[reqIndex].oid
+								+ "' in request at positiion '" + (reqIndex)
+								+ "' does not precede OID '"
+								+ pdu.varbinds[respIndex].oid
+								+ "' in response at position '" + (respIndex) + "'"));
+						return;
+					} else {
+						if (! varbinds[reqIndex])
+							varbinds[reqIndex] = [];
+						varbinds[reqIndex].push (pdu.varbinds[respIndex]);
+					}
+				}
+			}
+		}
+
+		req.responseCb (null, varbinds);
+	}
+
+	var pduVarbinds = [];
+
+	for (var i = 0; i &lt; oids.length; i++) {
+		var varbind = {
+			oid: oids[i]
+		};
+		pduVarbinds.push (varbind);
+	}
+
+	var options = {
+		nonRepeaters: nonRepeaters,
+		maxRepetitions: maxRepetitions
+	};
+
+	this.simpleGet (GetBulkRequestPdu, feedCb, pduVarbinds, responseCb,
+			options);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.getNext" id="apidoc.element.net-snmp.Session.prototype.getNext">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>getNext
+        <span class="apidocSignatureSpan">(oids, responseCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNext = function (oids, responseCb) {
+	function feedCb (req, message) {
+		var pdu = message.pdu;
+		var varbinds = [];
+
+		if (req.message.pdu.varbinds.length != pdu.varbinds.length) {
+			req.responseCb (new ResponseInvalidError ("Requested OIDs do not "
+					+ "match response OIDs"));
+		} else {
+			for (var i = 0; i &lt; req.message.pdu.varbinds.length; i++) {
+				if (isVarbindError (pdu.varbinds[i])) {
+					varbinds.push (pdu.varbinds[i]);
+				} else if (! oidFollowsOid (req.message.pdu.varbinds[i].oid,
+						pdu.varbinds[i].oid)) {
+					req.responseCb (new ResponseInvalidError ("OID '"
+							+ req.message.pdu.varbinds[i].oid + "' in request at "
+							+ "positiion '" + i + "' does not precede "
+							+ "OID '" + pdu.varbinds[i].oid + "' in response "
+							+ "at position '" + i + "'"));
+					return;
+				} else {
+					varbinds.push (pdu.varbinds[i]);
+				}
+			}
+
+			req.responseCb (null, varbinds);
+		}
+	}
+
+	var pduVarbinds = [];
+
+	for (var i = 0; i &lt; oids.length; i++) {
+		var varbind = {
+			oid: oids[i]
+		};
+		pduVarbinds.push (varbind);
+	}
+
+	this.simpleGet (GetNextRequestPdu, feedCb, pduVarbinds, responseCb);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.inform" id="apidoc.element.net-snmp.Session.prototype.inform">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>inform
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inform = function () {
+	var typeOrOid = arguments[0];
+	var varbinds, options = {}, responseCb;
+
+	<span class="apidocCodeCommentSpan">/**
+	 ** Support the following signatures:
+	 **
+	 **    typeOrOid, varbinds, options, callback
+	 **    typeOrOid, varbinds, callback
+	 **    typeOrOid, options, callback
+	 **    typeOrOid, callback
+	 **/
+</span>	if (arguments.length &gt;= 4) {
+		varbinds = arguments[1];
+		options = arguments[2];
+		responseCb = arguments[3];
+	} else if (arguments.length &gt;= 3) {
+		if (arguments[1].constructor != Array) {
+			varbinds = [];
+			options = arguments[1];
+			responseCb = arguments[2];
+		} else {
+			varbinds = arguments[1];
+			responseCb = arguments[2];
+		}
+	} else {
+		varbinds = [];
+		responseCb = arguments[1];
+	}
+
+	function feedCb (req, message) {
+		var pdu = message.pdu;
+		var varbinds = [];
+
+		if (req.message.pdu.varbinds.length != pdu.varbinds.length) {
+			req.responseCb (new ResponseInvalidError ("Inform OIDs do not "
+					+ "match response OIDs"));
+		} else {
+			for (var i = 0; i &lt; req.message.pdu.varbinds.length; i++) {
+				if (req.message.pdu.varbinds[i].oid != pdu.varbinds[i].oid) {
+					req.responseCb (new ResponseInvalidError ("OID '"
+							+ req.message.pdu.varbinds[i].oid
+							+ "' in inform at positiion '" + i + "' does not "
+							+ "match OID '" + pdu.varbinds[i].oid + "' in response "
+							+ "at position '" + i + "'"));
+					return;
+				} else {
+					varbinds.push (pdu.varbinds[i]);
+				}
+			}
+
+			req.responseCb (null, varbinds);
+		}
+	}
+
+	if (typeof typeOrOid != "string")
+		typeOrOid = "1.3.6.1.6.3.1.1.5." + (typeOrOid + 1);
+
+	var pduVarbinds = [
+		{
+			oid: "1.3.6.1.2.1.1.3.0",
+			type: ObjectType.TimeTicks,
+			value: options.upTime || Math.floor (process.uptime () * 100)
+		},
+		{
+			oid: "1.3.6.1.6.3.1.1.4.1.0",
+			type: ObjectType.OID,
+			value: typeOrOid
+		}
+	];
+
+	for (var i = 0; i &lt; varbinds.length; i++) {
+		var varbind = {
+			oid: varbinds[i].oid,
+			type: varbinds[i].type,
+			value: varbinds[i].value
+		};
+		pduVarbinds.push (varbind);
+	}
+	
+	options.port = this.trapPort;
+
+	this.simpleGet (InformRequestPdu, feedCb, pduVarbinds, responseCb, options);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.onClose" id="apidoc.element.net-snmp.Session.prototype.onClose">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function () {
+	this.cancelRequests (new Error ("Socket forcibly closed"));
+	this.emit ("close");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.onError" id="apidoc.element.net-snmp.Session.prototype.onError">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (error) {
+	this.emit (error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.onMsg" id="apidoc.element.net-snmp.Session.prototype.onMsg">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onMsg
+        <span class="apidocSignatureSpan">(buffer, remote)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onMsg = function (buffer, remote) {
+	try {
+		var message = new ResponseMessage (buffer);
+
+		var req = this.unregisterRequest (message.pdu.id);
+		if (! req)
+			return;
+
+		try {
+			if (message.version != req.message.version) {
+				req.responseCb (new ResponseInvalidError ("Version in request '"
+						+ req.message.version + "' does not match version in "
+						+ "response '" + message.version));
+			} else if (message.community != req.message.community) {
+				req.responseCb (new ResponseInvalidError ("Community '"
+						+ req.message.community + "' in request does not match "
+						+ "community '" + message.community + "' in response"));
+			} else if (message.pdu.type == PduType.GetResponse) {
+				req.onResponse (req, message);
+			} else {
+				req.responseCb (new ResponseInvalidError ("Unknown PDU type '"
+						+ message.pdu.type + "' in response"));
+			}
+		} catch (error) {
+			req.responseCb (error);
+		}
+	} catch (error) {
+		this.emit("error", error);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.onSimpleGetResponse" id="apidoc.element.net-snmp.Session.prototype.onSimpleGetResponse">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>onSimpleGetResponse
+        <span class="apidocSignatureSpan">(req, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onSimpleGetResponse = function (req, message) {
+	var pdu = message.pdu;
+
+	if (pdu.errorStatus &gt; 0) {
+		var statusString = ErrorStatus[pdu.errorStatus]
+				|| ErrorStatus.GeneralError;
+		var statusCode = ErrorStatus[statusString]
+				|| ErrorStatus[ErrorStatus.GeneralError];
+
+		if (pdu.errorIndex &lt;= 0 || pdu.errorIndex &gt; pdu.varbinds.length) {
+			req.responseCb (new RequestFailedError (statusString, statusCode));
+		} else {
+			var oid = pdu.varbinds[pdu.errorIndex - 1].oid;
+			var error = new RequestFailedError (statusString + ": " + oid,
+					statusCode);
+			req.responseCb (error);
+		}
+	} else {
+		req.feedCb (req, message);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.registerRequest" id="apidoc.element.net-snmp.Session.prototype.registerRequest">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>registerRequest
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerRequest = function (req) {
+	if (! this.reqs[req.id]) {
+		this.reqs[req.id] = req;
+		if (this.reqCount &lt;= 0)
+			this.dgram.ref();
+		this.reqCount++;
+	}
+	var me = this;
+	req.timer = setTimeout (function () {
+		if (req.retries-- &gt; 0) {
+			me.send (req);
+		} else {
+			me.unregisterRequest (req.id);
+			req.responseCb (new RequestTimedOutError (
+					"Request timed out"));
+		}
+	}, req.timeout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.send" id="apidoc.element.net-snmp.Session.prototype.send">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>send
+        <span class="apidocSignatureSpan">(req, noWait)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (req, noWait) {
+	try {
+		var me = this;
+		
+		var buffer = req.message.toBuffer ();
+
+		this.dgram.send (buffer, 0, buffer.length, req.port, this.target,
+				function (error, bytes) {
+			if (error) {
+				req.responseCb (error);
+			} else {
+				if (noWait) {
+					req.responseCb (null);
+				} else {
+					me.registerRequest (req);
+				}
+			}
+		});
+	} catch (error) {
+		req.responseCb (error);
+	}
+	
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Corrected a few instances of the parameter named `requestCallback` to some
+  methods in the README.md file which should have been `feedCallback`
+* Null type is used for varbinds with a 0 value
+* Correct instances of snmp.Type to snmp.ObjectType in the README.md file
+
+## Version 1.1.10 - 01/12/2013
+
+* Error handler in the `dgram.<span class="apidocCodeKeywordSpan">send</span>()` callback in the `send()` method was
+  creating a new instance of the `Error` class from the `error` parameter, but
+  it was already an instance of the `Error` class (thanks Ray Solomon)
+* Add stack traces to Error classes exported by this module (thanks Ray
+  Solomon)
+* Allow users to specify `0` retries when creating a session (thanks Ray
+  Solomon)
+* Update the list of SNMP version 1 related RFCs we adhere to in the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.set" id="apidoc.element.net-snmp.Session.prototype.set">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>set
+        <span class="apidocSignatureSpan">(varbinds, responseCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (varbinds, responseCb) {
+	function feedCb (req, message) {
+		var pdu = message.pdu;
+		var varbinds = [];
+
+		if (req.message.pdu.varbinds.length != pdu.varbinds.length) {
+			req.responseCb (new ResponseInvalidError ("Requested OIDs do not "
+					+ "match response OIDs"));
+		} else {
+			for (var i = 0; i &lt; req.message.pdu.varbinds.length; i++) {
+				if (req.message.pdu.varbinds[i].oid != pdu.varbinds[i].oid) {
+					req.responseCb (new ResponseInvalidError ("OID '"
+							+ req.message.pdu.varbinds[i].oid
+							+ "' in request at positiion '" + i + "' does not "
+							+ "match OID '" + pdu.varbinds[i].oid + "' in response "
+							+ "at position '" + i + "'"));
+					return;
+				} else {
+					varbinds.push (pdu.varbinds[i]);
+				}
+			}
+
+			req.responseCb (null, varbinds);
+		}
+	}
+
+	var pduVarbinds = [];
+
+	for (var i = 0; i &lt; varbinds.length; i++) {
+		var varbind = {
+			oid: varbinds[i].oid,
+			type: varbinds[i].type,
+			value: varbinds[i].value
+		};
+		pduVarbinds.push (varbind);
+	}
+
+	this.simpleGet (SetRequestPdu, feedCb, pduVarbinds, responseCb);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.simpleGet" id="apidoc.element.net-snmp.Session.prototype.simpleGet">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>simpleGet
+        <span class="apidocSignatureSpan">(pduClass, feedCb, varbinds, responseCb, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simpleGet = function (pduClass, feedCb, varbinds, responseCb, options) {
+	var req = {};
+
+	try {
+		var id = _generateId ();
+		var pdu = new pduClass (id, varbinds, options);
+		var message = new RequestMessage (this.version, this.community, pdu);
+
+		req = {
+			id: id,
+			message: message,
+			responseCb: responseCb,
+			retries: this.retries,
+			timeout: this.timeout,
+			onResponse: this.onSimpleGetResponse,
+			feedCb: feedCb,
+			port: (options &amp;&amp; options.port) ? options.port : this.port
+		};
+
+		this.send (req);
+	} catch (error) {
+		if (req.responseCb)
+			req.responseCb (error);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.subtree" id="apidoc.element.net-snmp.Session.prototype.subtree">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>subtree
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtree = function () {
+	var me = this;
+	var oid = arguments[0];
+	var maxRepetitions, feedCb, doneCb;
+
+	if (arguments.length &lt; 4) {
+		maxRepetitions = 20;
+		feedCb = arguments[1];
+		doneCb = arguments[2];
+	} else {
+		maxRepetitions = arguments[1];
+		feedCb = arguments[2];
+		doneCb = arguments[3];
+	}
+
+	var req = {
+		feedCb: feedCb,
+		doneCb: doneCb,
+		maxRepetitions: maxRepetitions,
+		baseOid: oid
+	};
+
+	this.walk (oid, maxRepetitions, subtreeCb.bind (me, req), doneCb);
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.table" id="apidoc.element.net-snmp.Session.prototype.table">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>table
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">table = function () {
+	var me = this;
+
+	var oid = arguments[0];
+	var maxRepetitions, responseCb;
+
+	if (arguments.length &lt; 3) {
+		responseCb = arguments[1];
+		maxRepetitions = 20;
+	} else {
+		maxRepetitions = arguments[1];
+		responseCb = arguments[2];
+	}
+
+	var req = {
+		responseCb: responseCb,
+		maxRepetitions: maxRepetitions,
+		baseOid: oid,
+		rowOid: oid + ".1.",
+		table: {}
+	};
+
+	this.subtree (oid, maxRepetitions, tableFeedCb.bind (me, req),
+			tableResponseCb.bind (me, req));
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.tableColumns" id="apidoc.element.net-snmp.Session.prototype.tableColumns">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>tableColumns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tableColumns = function () {
+	var me = this;
+
+	var oid = arguments[0];
+	var columns = arguments[1];
+	var maxRepetitions, responseCb;
+
+	if (arguments.length &lt; 4) {
+		responseCb = arguments[2];
+		maxRepetitions = 20;
+	} else {
+		maxRepetitions = arguments[2];
+		responseCb = arguments[3];
+	}
+
+	var req = {
+		responseCb: responseCb,
+		maxRepetitions: maxRepetitions,
+		baseOid: oid,
+		rowOid: oid + ".1.",
+		columns: columns.slice(0),
+		table: {}
+	};
+
+	if (req.columns.length &gt; 0) {
+		var column = req.columns.pop ();
+		this.subtree (req.rowOid + column, maxRepetitions,
+				tableColumnsFeedCb.bind (me, req),
+				tableColumnsResponseCb.bind (me, req));
+	}
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.trap" id="apidoc.element.net-snmp.Session.prototype.trap">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>trap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trap = function () {
+	var req = {};
+
+	try {
+		var typeOrOid = arguments[0];
+		var varbinds, options = {}, responseCb;
+
+		<span class="apidocCodeCommentSpan">/**
+		 ** Support the following signatures:
+		 **
+		 **    typeOrOid, varbinds, options, callback
+		 **    typeOrOid, varbinds, agentAddr, callback
+		 **    typeOrOid, varbinds, callback
+		 **    typeOrOid, agentAddr, callback
+		 **    typeOrOid, options, callback
+		 **    typeOrOid, callback
+		 **/
+</span>		if (arguments.length &gt;= 4) {
+			varbinds = arguments[1];
+			if (typeof arguments[2] == "string") {
+				options.agentAddr = arguments[2];
+			} else if (arguments[2].constructor != Array) {
+				options = arguments[2];
+			}
+			responseCb = arguments[3];
+		} else if (arguments.length &gt;= 3) {
+			if (typeof arguments[1] == "string") {
+				varbinds = [];
+				options.agentAddr = arguments[1];
+			} else if (arguments[1].constructor != Array) {
+				varbinds = [];
+				options = arguments[1];
+			} else {
+				varbinds = arguments[1];
+				agentAddr = null;
+			}
+			responseCb = arguments[2];
+		} else {
+			varbinds = [];
+			responseCb = arguments[1];
+		}
+
+		var pdu, pduVarbinds = [];
+
+		for (var i = 0; i &lt; varbinds.length; i++) {
+			var varbind = {
+				oid: varbinds[i].oid,
+				type: varbinds[i].type,
+				value: varbinds[i].value
+			};
+			pduVarbinds.push (varbind);
+		}
+		
+		var id = _generateId ();
+
+		if (this.version == Version2c) {
+			if (typeof typeOrOid != "string")
+				typeOrOid = "1.3.6.1.6.3.1.1.5." + (typeOrOid + 1);
+
+			pduVarbinds.unshift (
+				{
+					oid: "1.3.6.1.2.1.1.3.0",
+					type: ObjectType.TimeTicks,
+					value: options.upTime || Math.floor (process.uptime () * 100)
+				},
+				{
+					oid: "1.3.6.1.6.3.1.1.4.1.0",
+					type: ObjectType.OID,
+					value: typeOrOid
+				}
+			);
+
+			pdu = new TrapV2Pdu (id, pduVarbinds, options);
+		} else {
+			pdu = new TrapPdu (typeOrOid, pduVarbinds, options);
+		}
+
+		var message = new RequestMessage (this.version, this.community, pdu);
+
+		req = {
+			id: id,
+			message: message,
+			responseCb: responseCb,
+			port: this.trapPort
+		};
+
+		this.send (req, true);
+	} catch (error) {
+		if (req.responseCb)
+			req.responseCb (error);
+	}
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.unregisterRequest" id="apidoc.element.net-snmp.Session.prototype.unregisterRequest">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>unregisterRequest
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregisterRequest = function (id) {
+	var req = this.reqs[id];
+	if (req) {
+		delete this.reqs[id];
+		clearTimeout (req.timer);
+		delete req.timer;
+		this.reqCount--;
+		if (this.reqCount &lt;= 0)
+			this.dgram.unref();
+		return req;
+	} else {
+		return null;
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.net-snmp.Session.prototype.walk" id="apidoc.element.net-snmp.Session.prototype.walk">
+        function <span class="apidocSignatureSpan">net-snmp.Session.prototype.</span>walk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walk = function () {
+	var me = this;
+	var oid = arguments[0];
+	var maxRepetitions, feedCb, doneCb, baseOid;
+
+	if (arguments.length &lt; 4) {
+		maxRepetitions = 20;
+		feedCb = arguments[1];
+		doneCb = arguments[2];
+	} else {
+		maxRepetitions = arguments[1];
+		feedCb = arguments[2];
+		doneCb = arguments[3];
+	}
+
+	var req = {
+		maxRepetitions: maxRepetitions,
+		feedCb: feedCb,
+		doneCb: doneCb
+	};
+
+	if (this.version == Version2c)
+		this.getBulk ([oid], 0, maxRepetitions,
+				walkCb.bind (me, req));
+	else
+		this.getNext ([oid], walkCb.bind (me, req));
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
